@@ -43,8 +43,8 @@ export default class TaskList {
         iconRemove.classList.toggle('hidden');
         iconDots.classList.toggle('hidden');
         iconRemove.addEventListener('click', (event) => {
-          const taskItem = event.target.parentNode.parentNode;
-          this.removeItem(taskItem);
+          this.removeItem();
+          this.renderTodo(list);
         });
       });
 
@@ -81,16 +81,8 @@ export default class TaskList {
     });
   }
 
-  removeFromLocal(index) {
-    this.tasks = this.tasks.filter((task) => +task.index !== +index);
-    this.resetIndex();
-    this.saveTolocal();
-    this.renderTodo(list);
-  }
-
-  removeItem(item) {
-    const idItem = item.id;
-    this.removeFromLocal(idItem);
+  removeItem(index) {
+    this.tasks.splice(index, 1);
   }
 
   clearCompleted = () => {
