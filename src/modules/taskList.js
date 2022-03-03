@@ -1,4 +1,4 @@
-import TodoTask from "./todoTask.js";
+import TodoTask from "../modules/todoTask.js";
 
 export const list = document.querySelector(".list");
 export const inputTodo = document.querySelector(".add-todo");
@@ -85,9 +85,6 @@ export default class TaskList {
 
   removeFromLocal(index) {
     this.tasks = this.tasks.filter((task) => +task.index !== +index);
-    // this.tasks.forEach((el, i) => {
-    //   el.index = i;
-    // });
     this.resetIndex();
     this.saveTolocal();
     this.renderTodo(list);
@@ -101,8 +98,7 @@ export default class TaskList {
   clearCompleted = () => {
     this.tasks = this.tasks.filter((td) => td.done === false);
     this.resetIndex();
-    // this.tasks.forEach((el, i) => {
-    //   el.index = i;
-    // });
   };
 }
+
+// module.exports = TaskList;
