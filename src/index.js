@@ -16,6 +16,7 @@ addTodoBtn.addEventListener('click', (e) => {
   myTasks.addTodo(inputTodo.value, myTasks.tasks);
   myTasks.renderTodo(list);
   myTasks.saveTolocal();
+  inputTodo.value = '';
 });
 
 clearList.addEventListener('click', () => {
