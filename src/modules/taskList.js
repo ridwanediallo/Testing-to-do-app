@@ -82,6 +82,7 @@ export default class TaskList {
   }
 
   removeItem(index) {
+    this.tasks.filter((task) => +task.index !== +index);
     this.tasks.splice(index, 1);
   }
 
