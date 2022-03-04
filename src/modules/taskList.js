@@ -27,7 +27,7 @@ export default class TaskList {
       item.innerHTML = `
             <div class="left-itmes">
             <input type="checkbox" class="checkbox" ${el.done ? 'checked' : ''}>
-            <input type='text' class='todo ${
+            <input type='text' class='todo  ${
               el.done ? 'line-through' : ''
             }' value='${el.desp}'>
             </div>
@@ -53,11 +53,22 @@ export default class TaskList {
       const checkBox = item.querySelector('.checkbox');
       const todo = item.querySelector('.todo');
       todo.classList.add('todo-style');
-      checkBox.addEventListener('click', this.clickCheck);
+      checkBox.addEventListener('click', (e) => {
+        const todo = e.target.parentNode.children[1];
+        const div = e.target.parentNode;
+        const { id } = div.parentNode;
+        this.clickCheck(id);
+        todo.classList.toggle('line-through');
+        this.saveTolocal();
+      });
 
       list.append(item);
     });
   };
+
+  editTodo(desp, index) {
+    this.tasks[index].desp = desp;
+  }
 
   addTodo(desp, tasks) {
     if (desp) {
@@ -66,13 +77,8 @@ export default class TaskList {
     }
   }
 
-  clickCheck = (e) => {
-    const todo = e.target.parentNode.children[1];
-    const div = e.target.parentNode;
-    const { id } = div.parentNode;
+  clickCheck = (id) => {
     this.tasks[id].done = !this.tasks[id].done;
-    todo.classList.toggle('line-through');
-    this.saveTolocal();
   };
 
   resetIndex() {
@@ -91,5 +97,3 @@ export default class TaskList {
     this.resetIndex();
   };
 }
-
-// module.exports = TaskList;
