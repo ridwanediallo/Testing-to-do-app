@@ -5,11 +5,11 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint .; npx stylelint \"**/*.{css,scss}\"; npx hint .",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ridwanediallo/webpack-exercise#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.6.0",
     "eslint": "^7.32.0",
@@ -40,6 +41,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "jest": "^27.5.1",
     "lodash": "^4.17.21"
   }
 }
