@@ -1,4 +1,4 @@
-import TodoTask from '../modules/todoTask.js';
+import TodoTask from './todoTask';
 
 export const list = document.querySelector('.list');
 export const inputTodo = document.querySelector('.add-todo');
