@@ -1,4 +1,4 @@
-import TodoTask from './todoTask';
+import TodoTask from './todoTask.js';
 
 export const list = document.querySelector('.list');
 export const inputTodo = document.querySelector('.add-todo');
@@ -42,7 +42,7 @@ export default class TaskList {
         const iconDots = item.querySelector('.icon-dots');
         iconRemove.classList.toggle('hidden');
         iconDots.classList.toggle('hidden');
-        iconRemove.addEventListener('click', (event) => {
+        iconRemove.addEventListener('click', () => {
           this.removeItem();
           this.renderTodo(list);
         });

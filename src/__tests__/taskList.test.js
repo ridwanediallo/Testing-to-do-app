@@ -4,9 +4,6 @@
 
 import TaskList from '../modules/taskList.js';
 
-document.body.innerHTML = '<div>' + '<ul id="list"><li></li> </ul>' + '</div>';
-
-const item = document.querySelector('#list');
 const todo = new TaskList();
 
 describe('Testing add functionality', () => {
@@ -47,7 +44,6 @@ describe('Testing Remove functionality', () => {
 describe('Testing Remove functionality', () => {
   test('Remove todo', () => {
     todo.removeItem(0);
-    console.log(todo.tasks);
     expect(todo.tasks.length).toBe(0);
   });
 });
