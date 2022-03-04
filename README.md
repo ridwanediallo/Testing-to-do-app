@@ -16,6 +16,9 @@ To get a local copy up and running follow these simple steps.
 
 - You can clone this repo by typing on your terminal.<pre><code>git clone https://github.com/ridwanediallo/Testing-to-do-app</code></pre>
 - Type <pre><code>cd To-do-List-App</code></pre> to access the project on the terminal
+- Run: <pre><code>npm install</code></pre> to have all the project dependencies in your local environment
+
+- Run: <pre><code>npm start</code></pre> to view the output in your browser
 
 ## Built With
 
