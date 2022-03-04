@@ -59,7 +59,6 @@ describe('Testing CompleteAll functionality', () => {
 describe('Testing CompleteAll functionality', () => {
   test('Complete status', () => {
     todo.addTodo('Finish my task', todo.tasks);
-    console.log(todo.tasks);
     todo.clickCheck(1);
     expect(todo.tasks[1].done).toBeTruthy();
   });
