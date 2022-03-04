@@ -20,6 +20,8 @@ To get a local copy up and running follow these simple steps.
 
 - Run: <pre><code>npm start</code></pre> to view the output in your browser
 
+- Run: <pre><code>npm test</code></pre> to run the tests
+
 ## Built With
 
 - Major languages
